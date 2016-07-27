@@ -61,24 +61,31 @@ def delete_post(request, post_id):
 
 
 def user_login(request):
-    next_ = request.GET.get('next', '/')
+
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
 
         user = authenticate(username=username, password=password)
 
+        url = request.META.get('HTTP_REFERER')
+        index = url.find('=')
+        if index >= 0:
+            url = url[index + 1:]
+        else:
+            url = '/'
+
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect(next_)
+                return redirect(url)
             else:
                 return HttpResponse("Inactive user.")
         else:
             return HttpResponse("Invalid login details supplied.")
 
     else:
-        return render(request, 'blogpost/login.html', {'redirect_to': next_})
+        return render(request, 'blogpost/login.html',)
 
 
 def user_logout(request):
