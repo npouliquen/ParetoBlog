@@ -1,9 +1,20 @@
 {% extends 'blogpost/base.html' %}
 
 {% block content %}
-  <h1>Edit Post</h1>
-  <form method="POST">{% csrf_token %}
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--3-col"></div>
+
+  <div class="mdl-cell mdl-cell--6-col">
+    <h1>Edit Post</h1>
+  </div>
+
+  <div class="mdl-cell mdl-cell--3-col"></div>
+
+</div>
+
+  <form method="POST" class="center">{% csrf_token %}
     {{ form.as_p }}
+
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">Save</button>
     <a href='/' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Cancel</button>
   </form>

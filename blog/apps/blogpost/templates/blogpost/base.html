@@ -5,70 +5,68 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-blue.min.css" />
+  <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 </head>
 <body>
 
 <style>
-  .mdl-layout {
-    align-items: center;
-  }
-  .post.mdl-card {
-    width: 1000px;
-    margin: 1rem;
-  }
-  .post.mdl-card:hover {
-    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
-  }
-  .mdl-card__title {
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  .mdl-card__title-text, .mdl-card__subtitle-text {
-    align-self: flex-start;
-  }
-  img.in_card {
-    max-height: auto;
-    width: 100%;
-  }
+.post.mdl-card {
+  margin: 1rem;
+}
+.post.mdl-card:hover {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+}
+.mdl-card__title {
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.mdl-card__title-text, .mdl-card__subtitle-text {
+  align-self: flex-start;
+}
+img.in_card {
+  max-height: auto;
+  width: 100%;
+}
+form.center {
+  align-self: center;
+}
 </style>
 
-  <!-- Uses a header that scrolls with the text, rather than staying
-  locked at the top -->
-  <div class="mdl-layout mdl-js-layout">
-    <header class="mdl-layout__header mdl-layout__header--scroll">
-      <div class="mdl-layout__header-row">
-        <!-- Title -->
-        <span class="mdl-layout-title"><a href="/"><img src="http://www.teampareto.com/static/ParetoLogo1.png" height="50"></a></span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation -->
-        {% if request.user.is_authenticated %}
-        <nav class="mdl-navigation">
-          {% block nav_items %}
-          {% endblock %}
-          <a class="mdl-navigation__link" href="{% url 'new_post' %}">New Post</a>
-          <a class="mdl-navigation__link" href="{% url 'logout' %}">Logout</a>
-        </nav>
-        {% endif %}
-      </div>
-    </header>
-    <div class="mdl-layout__drawer">
+<!-- Uses a header that scrolls with the text, rather than staying
+locked at the top -->
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--scroll">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title"><a href="/"><img src="http://www.teampareto.com/static/ParetoLogo1.png" height="50"></a></span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      {% if request.user.is_authenticated %}
+      <nav class="mdl-navigation">
+        {% block nav_items %}
+        {% endblock %}
+        <a class="mdl-navigation__link" href="{% url 'new_post' %}">New Post</a>
+        <a class="mdl-navigation__link" href="{% url 'logout' %}">Logout</a>
+      </nav>
+      {% endif %}
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Sites</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="http://www.teampareto.com">Pareto Technologies</a>
       <a class="mdl-navigation__link" href="http://www.riteclass.com">RiteClass</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
     </nav>
   </div>
-    {% block content %}
-    {% endblock %}
-  </div>
+  {% block content %}
+  {% endblock %}
+</div>
 
 
 
 
 
-  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 </body>
 </html>
