@@ -4,6 +4,7 @@
   <h2>New Post</h2>
   <form method="POST">{% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Save</button>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">Save</button>
+    <a href='/' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Cancel</button>
   </form>
 {% endblock %}

@@ -1,19 +1,17 @@
-<html>
-    <head>
-        <title>Pareto Engineering Blog</title>
-    </head>
+{% extends 'blogpost/base.html' %}
+{% block content%}
+<h1>Login</h1>
+<form id="login_form" method="post" action="/login/">
+  {% csrf_token %}
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    Username: <input class="mdl-textfield__input" type="text" name="username" value="" />
+    <br />
+  </div>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    Password: <input class="mdl-textfield__input" type="password" name="password" value="" />
+    <br />
+  </div>
 
-    <body>
-        <h1>Login to make a new post</h1>
-        <form id="login_form" method="post" action="/login/">
-            {% csrf_token %}
-            Username: <input type="text" name="username" value="" size="50" />
-            <br />
-            Password: <input type="password" name="password" value="" size="50" />
-            <br />
-
-            <input type="submit" value="submit" />
-        </form>
-
-    </body>
-</html>
+  <input type="submit" value="submit" />
+</form>
+{% endblock %}

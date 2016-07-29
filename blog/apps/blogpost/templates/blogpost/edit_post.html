@@ -1,9 +1,10 @@
 {% extends 'blogpost/base.html' %}
 
 {% block content %}
-  <h1>New Post</h1>
+  <h1>Edit Post</h1>
   <form method="POST">{% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Save</button>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">Save</button>
+    <a href='/' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Cancel</button>
   </form>
 {% endblock %}
