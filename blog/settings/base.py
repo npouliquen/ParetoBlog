@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.blogpost',
-    'markdownx'
+    'markdownx',
+    'pagedown'
 ]
 
 MIDDLEWARE_CLASSES = [
