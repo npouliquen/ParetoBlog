@@ -1,21 +1,29 @@
 {% extends 'blogpost/base.html' %}
 
 {% block content %}
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--3-col"></div>
-
-  <div class="mdl-cell mdl-cell--6-col">
-    <h1>Edit Post</h1>
+<main class="mdl-layout__content">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--3-col"></div>
+    <div class="mdl-cell mdl-cell--6-col">
+      <h1 style="text-align: center">Edit Post</h1>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col"></div>
   </div>
 
-  <div class="mdl-cell mdl-cell--3-col"></div>
-
-</div>
-
-  <form method="POST" style="align-self: center">{% csrf_token %}
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--3-col"></div>
+    <div class="mdl-cell mdl-cell--6-col">
+  <form method="POST">{% csrf_token %}
     {{ form.as_p }}
 
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">Save</button>
-    <a href='/' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Cancel</button>
+    <a href='/' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Cancel</a>
   </form>
+  {{ form.media }}
+</div>
+<div class="mdl-cell mdl-cell--3-col"></div>
+</div>
+</main>
+
+
 {% endblock %}

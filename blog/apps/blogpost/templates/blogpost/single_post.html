@@ -1,4 +1,5 @@
 {% extends 'blogpost/base.html' %}
+{% load markdown_deux_tags %}
 {% block head_title %}{{ post.title }}{% endblock %}
 
 {% block nav_items %}
@@ -23,7 +24,7 @@
         </div>
 
         <div class="mdl-card__supporting-text" style="padding-top: 0px">
-          {{ post.text|linebreaksbr }}
+          {{ post.text|markdown }}
         </div>
 
       </a>

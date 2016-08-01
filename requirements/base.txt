@@ -2,12 +2,14 @@ appnope==0.1.0
 backports.shutil-get-terminal-size==1.0.0
 decorator==4.0.10
 Django==1.9.8
+django-markdown-deux==1.0.5
 django-markdownx==1.6
 django-pagedown==0.1.1
 ipdb==0.10.1
 ipython==5.0.0
 ipython-genutils==0.1.0
 Markdown==2.6.6
+markdown2==2.3.1
 pathlib2==2.1.0
 pexpect==4.2.0
 pickleshare==0.7.3
