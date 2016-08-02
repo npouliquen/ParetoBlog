@@ -13,16 +13,16 @@
   <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--3-col"></div>
     <div class="mdl-cell mdl-cell--6-col">
-  <form method="POST">{% csrf_token %}
-    {{ form.as_p }}
+      <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
 
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">Save</button>
-    <a href='/' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Cancel</a>
-  </form>
-  {{ form.media }}
-</div>
-<div class="mdl-cell mdl-cell--3-col"></div>
-</div>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">Save</button>
+        <a href='/' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Cancel</a>
+      </form>
+      {{ form.media }}
+    </div>
+    <div class="mdl-cell mdl-cell--3-col"></div>
+  </div>
 </main>
 
 
