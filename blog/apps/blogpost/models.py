@@ -22,6 +22,14 @@ class Post(models.Model):
         else:
             return "https://s3.amazonaws.com/paretoengineeringblog/ParetoLogo1.png"
 
+    def hide_image_in_preview(self):
+        index = self.text.find("![]")
+        if (index > -1 and index <= 500):
+            end_of_url = self.text.find(')', index) + 1
+            return self.text[:index] + self.text[end_of_url:]
+        else:
+            return self.text
+
     def publish(self):
         self.published_date = timezone.now()
         self.save()
